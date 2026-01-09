@@ -1,0 +1,24 @@
+{
+  "name": "celq-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to run celq commands",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist",
+    "test": "node index.js"
+  },
+  "keywords": [
+    "github-action",
+    "celq",
+    "json"
+  ],
+  "author": "get-celq",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  }
+}
