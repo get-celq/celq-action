@@ -7,7 +7,7 @@ Run celq commands in your GitHub Actions workflows.
 ```yaml
 - name: Example Celq Action
   id: exampleID
-  uses: get-celq/celq@main
+  uses: get-celq/celq-action@main
   with:
     cmd: celq 'this.exampleID' < example.json
 
@@ -46,7 +46,7 @@ The output from the celq command, which can be used in subsequent steps.
 ```yaml
 - name: Parse JSON file
   id: responseStatus
-  uses: get-celq/celq@main
+  uses: get-celq/celq-action@main
   with:
     cmd: celq 'this.status' < response.json
 
@@ -59,7 +59,7 @@ The output from the celq command, which can be used in subsequent steps.
 ```yaml
 - name: Run celq with specific version
   id: query
-  uses: get-celq/celq@main
+  uses: get-celq/celq-action@main
   with:
     cmd: celq -n -b 'this.status' < response.json
     version: 0.1.2
@@ -70,7 +70,7 @@ We also handle the `v` prefix:
 ```yaml
 - name: Run celq with specific version
   id: query
-  uses: get-celq/celq@main
+  uses: get-celq/celq-action@main
   with:
     cmd: celq 'this.data.items' < response.json
     version: v0.1.2
@@ -81,7 +81,7 @@ We also handle the `v` prefix:
 ```yaml
 - name: Fetch and parse data
   id: fetch
-  uses: get-celq/celq@main
+  uses: get-celq/celq-action@main
   with:
     cmd: echo '[1, 2, 3]' | celq 'this[1]'
 

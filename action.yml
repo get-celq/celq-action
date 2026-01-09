@@ -1,0 +1,24 @@
+name: 'Celq Action'
+description: 'Run celq commands in your GitHub Actions workflow'
+author: 'get-celq'
+
+branding:
+  icon: 'filter'
+  color: 'blue'
+
+inputs:
+  cmd:
+    description: 'The command to run (e.g., "celq .field < file.json" or "curl URL | celq .field")'
+    required: true
+  version:
+    description: 'Version of celq to use (e.g., "0.1.1" or "v0.1.1"). Defaults to latest.'
+    required: false
+    default: 'latest'
+
+outputs:
+  result:
+    description: 'The output result from the celq command'
+
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
