@@ -22,7 +22,7 @@ Run celq commands in your GitHub Actions workflows.
 The command to run. This can be any shell command that includes celq, such as:
 - `celq 'this.field' < input.json`
 - `curl https://api.example.com/data | celq 'this.items.filter(x, x.has("otherfield"))'`
-- `cat data.json | celq '.users[0].name'`
+- `cat data.json | celq 'this.users[0].name'`
 
 ### `version` (optional)
 
